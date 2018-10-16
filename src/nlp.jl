@@ -454,7 +454,7 @@ function MOI.initialize(d::NLPEvaluator, requested_features::Vector{Symbol})
 end
 
 function MOI.features_available(d::NLPEvaluator)
-    features = [:Grad, :Jac, :ExprGraph]
+    features = [:Func, :Grad, :Jac, :ExprGraph]
     if !d.disable_2ndorder
         push!(features,:Hess)
         push!(features,:HessVec)
